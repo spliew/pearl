@@ -110,7 +110,7 @@ def normalize_only(data, fields):
     feed_data = pd.DataFrame(outputs).T
     return feed_data.to_numpy()
 
-def save_mydataset(a,b,c,d, name, path="/home1/irteamsu/work/dp-merf/code_tab/tab_data/recorded/"):
+def save_mydataset(a,b,c,d, name, path="/code_tab/tab_data/recorded/"):
     with open(path+name+"_xtrain.p","wb") as f:
         pickle.dump(a,f)
     with open(path+name+"_ytrain.p","wb") as f:
@@ -121,7 +121,7 @@ def save_mydataset(a,b,c,d, name, path="/home1/irteamsu/work/dp-merf/code_tab/ta
         pickle.dump(d,f)
     print(f'saved files to {path}')
 
-def load_mydataset(name, path="/home1/irteamsu/work/dp-merf/code_tab/tab_data/recorded/"):
+def load_mydataset(name, path="/code_tab/tab_data/recorded/"):
     with open(path+name+"_xtrain.p","rb") as f:
         a = pickle.load(f)
     with open(path+name+"_ytrain.p","rb") as f:

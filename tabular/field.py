@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sat Aug 24 02:51:38 2019
-
-@author: susie
+copied from daisy github
 """
 
 import numpy as np
