@@ -21,8 +21,8 @@ def load_mnist_data(data_key, data_from_torch, base_dir='data/'):
   else:
     from torchvision import datasets
     if data_key == 'digits':
-      train_data = datasets.MNIST('/home1/work/data', train=True)
-      test_data = datasets.MNIST('/home1/irteamsuwork/data', train=False)
+      train_data = datasets.MNIST('/home1/data', train=True)
+      test_data = datasets.MNIST('/home1/data', train=False)
     elif data_key == 'fashion':
       train_data = datasets.FashionMNIST('/home1/work/code_balanced/data', train=True)
       test_data = datasets.FashionMNIST('/home1/work/code_balanced/data', train=False)
