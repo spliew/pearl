@@ -2,8 +2,8 @@
   - This repository contains source codes to reproduce the results in **PEARL: Data Synthesis with Private Embeddings and Adversarial Reconstruction Learning**.
 
 ## Structure
-  - `image`: contains the code for image dataset experiment. To run, use `main.py`.
-  - `tabular`: contains the code for tabular dataset experiment. To run, use `run.py`.
+  - `image`: contains the code for image dataset experiment. To run, use `main.py`. To evaluate, use `eval.py`.
+  - `tabular`: contains the code for tabular dataset experiment. To run or evaluate, use `run.py`.
   
 ## Dependencies
 Version numbers are based on our machine and may need not to be matched exactly.

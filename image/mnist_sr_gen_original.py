@@ -45,29 +45,6 @@ def train_multi_release(gen, device, train_loader, optimizer, epoch, rff_mmd_los
       print('Train Epoch: {} [{}/{}]\tLoss: {:.6f}'.format(epoch, batch_idx * len(data), n_data, loss.item()))
 
 
-def test(gen, device, test_loader, rff_mmd_loss, epoch, batch_size, log_dir):
-  test_loss = 0
-  with pt.no_grad():
-    for data, labels in test_loader:
-      data, labels = data.to(device), labels.to(device)
-      data = flat_data(data, labels, device, n_labels=10, add_label=False)
-      loss = compute_rff_loss(gen, data, labels, rff_mmd_loss, device)
-      test_loss += loss.item()  # sum up batch loss
-
-  test_loss /= (len(test_loader.dataset) / batch_size)
-
-  data_enc_batch = data.cpu().numpy()
-#   med_dist = meddistance(data_enc_batch)
-#   print(f'med distance for encodings is {med_dist}, heuristic suggests sigma={med_dist ** 2}')
-
-  ordered_labels = pt.repeat_interleave(pt.arange(10), 10)[:, None].to(device)
-  gen_code, gen_labels = gen.get_code(100, device, labels=ordered_labels)
-  gen_samples = gen(gen_code).detach()
-
-  plot_samples = gen_samples[:100, ...].cpu().numpy()
-  plot_mnist_batch(plot_samples, 10, 10, log_dir + f'samples_ep{epoch}', denorm=False)
-  print('Test set: Average loss: {:.4f}'.format(test_loss))
-  return test_loss
 
 
 

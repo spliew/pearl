@@ -94,8 +94,6 @@ for i in range(5):
         
     scheduler.step()
     print(f'loss at epoch {i} is {torch.sum( ( gen_emb - noisy_emb ) **2)}')
-#     print(f'largest loss at epoch {i} is {torch.max( ( gen_emb - noisy_emb ) **2)} at {torch.argmax( ( gen_emb - noisy_emb ) **2)}')
-    test(gen, 'cuda:0', test_loader, mb_loss, i, 1000, filepath+f'/{seed}/')
 torch.save(gen.state_dict(), filepath+f'/{seed}/model.pth')
 print('saved model!')
 
