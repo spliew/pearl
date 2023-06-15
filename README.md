@@ -1,5 +1,5 @@
 # PEARL
-  - This repository contains source codes to reproduce the results in **PEARL: Data Synthesis with Private Embeddings and Adversarial Reconstruction Learning**.
+  - This repository contains source codes to reproduce the results in **PEARL: Data Synthesis with Private Embeddings and Adversarial Reconstruction Learning**, published as a conference paper at ICLR 2022: https://openreview.net/forum?id=M6M8BEmd6dq 
 
 ## Structure
   - `image`: contains the code for image dataset experiment. To run, use `main.py`. To evaluate, use `eval.py`.
